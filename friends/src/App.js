@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import FriendsList from "./components/FriendsList";
 import PrivateRoute from "./components/PrivateRoute";
@@ -10,13 +10,24 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //->FRIENDCARD
 //[stretch]: FRIENDCARD - EDIT, DELETE
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
-      <Header />
+      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Switch>
-        <PrivateRoute exact path="/friends" component={FriendsList} />
-        <Route path="/login" component={Login} />
-        <Route component={Login} />
+        <PrivateRoute
+          exact
+          path="/friends"
+          loggedIn={loggedIn}
+          component={FriendsList}
+        />
+        <Route
+          path="/login"
+          render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+        />
+        <Route
+          render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+        />
       </Switch>
     </Router>
   );

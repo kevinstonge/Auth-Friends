@@ -8,7 +8,7 @@
     @include flexC();
     align-items: flex-start;
     .error {
-      color: red;
+      color: $error;
     }
   }
 }

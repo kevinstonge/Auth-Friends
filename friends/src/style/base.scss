@@ -2,6 +2,8 @@ $b1: #222;
 $b2: #333;
 $f1: #eee;
 $f2: #fff;
+$error: #e22;
+$e1: #a6c;
 @mixin flexC() {
   display: flex;
   flex-direction: column;

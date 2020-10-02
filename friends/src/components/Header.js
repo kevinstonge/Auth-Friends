@@ -6,7 +6,19 @@ const Header = (props) => {
     <header>
       <h1>Friends App</h1>
       <nav>
-        <NavLink to="/login">Log in</NavLink>
+        {props.loggedIn ? (
+          <NavLink
+            to="/login"
+            onClick={() => {
+              localStorage.removeItem("token");
+              props.setLoggedIn(false);
+            }}
+          >
+            Log out
+          </NavLink>
+        ) : (
+          <NavLink to="/login">Log in</NavLink>
+        )}
         <NavLink to="/friends">My friends</NavLink>
       </nav>
     </header>
