@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import FriendsList from "./components/FriendsList";
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
+import FriendProfile from "./components/FriendProfile";
 import "./style/App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //LOGIN
@@ -30,6 +31,7 @@ function App() {
           path="/login"
           render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />
+        <Route path="/friend/:id" render={() => <FriendProfile />} />
         <Route
           render={() => <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FriendCard from "./FriendCard";
 import axiosWithAuth from "../api/axiosWithAuth";
+import "../style/FriendsList.scss";
 const FriendsList = (props) => {
   const [friends, setFriends] = useState([]);
   useEffect(() => {
