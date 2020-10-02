@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import FriendsList from "./components/FriendsList";
 import PrivateRoute from "./components/PrivateRoute";
@@ -11,6 +11,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //[stretch]: FRIENDCARD - EDIT, DELETE
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      setLoggedIn(true);
+    }
+  }, []);
   return (
     <Router>
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
