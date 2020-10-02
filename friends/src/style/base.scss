@@ -1,0 +1,20 @@
+$b1: #222;
+$b2: #333;
+$f1: #eee;
+$f2: #fff;
+@mixin flexC() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+@mixin flexR() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}

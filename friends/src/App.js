@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Header from "./components/Header";
+import FriendsList from "./components/FriendsList";
+import PrivateRoute from "./components/PrivateRoute";
+import Login from "./components/Login";
+import "./style/App.scss";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//LOGIN
+//FRIENDSLIST - ADD FRIEND
+//->FRIENDCARD
+//[stretch]: FRIENDCARD - EDIT, DELETE
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <PrivateRoute exact path="/friends" component={FriendsList} />
+        <Route path="/login" component={Login} />
+        <Route component={Login} />
+      </Switch>
+    </Router>
   );
 }
 

@@ -1,0 +1,10 @@
+@import "./base.scss";
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $b1;
+  color: $f1;
+  @include flexC();
+  justify-content: flex-start;
+}

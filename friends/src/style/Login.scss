@@ -1,0 +1,14 @@
+@import "./base.scss";
+.loginForm {
+  background: linear-gradient(to top, $b1, $b2);
+  padding: 0.5rem;
+  @include flexC();
+  gap: 0.75rem;
+  label {
+    @include flexC();
+    align-items: flex-start;
+    .error {
+      color: red;
+    }
+  }
+}
