@@ -23,6 +23,16 @@ const FriendProfile = (props) => {
       .catch((e) => console.log(e));
     setIsEditing(false);
   };
+  const deleteFriend = () => {
+    axiosWithAuth()
+      .delete(`/friends/${id.id}`)
+      .then((r) => {
+        setFriend({ name: "[deleted]", age: "", email: "" });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   useEffect(() => {
     getFriend();
   }, [id, getFriend]);
@@ -42,6 +52,7 @@ const FriendProfile = (props) => {
           <p>age: {friend.age}</p>
           <p>email: {friend.email}</p>
           <button onClick={() => setIsEditing(true)}>edit</button>
+          <button onClick={() => deleteFriend()}>delete</button>
         </>
       )}
     </div>
