@@ -8,3 +8,8 @@
   @include flexC();
   justify-content: flex-start;
 }
+
+a,
+button {
+  @include button();
+}

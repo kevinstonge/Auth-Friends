@@ -6,7 +6,6 @@ import Login from "./components/Login";
 import FriendProfile from "./components/FriendProfile";
 import "./style/App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//FRIENDSLIST - ADD FRIEND
 //[stretch]: FRIENDCARD - EDIT, DELETE
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);

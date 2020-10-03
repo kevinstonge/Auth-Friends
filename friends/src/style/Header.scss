@@ -5,16 +5,11 @@ header {
   padding: 1rem;
   width: 100%;
   background: linear-gradient(to top, $b1, $b2);
+  h1 {
+    font-size: 1.5rem;
+  }
   nav {
     @include flexR();
     gap: 0.5rem;
-    a {
-      padding: 0.5rem;
-      background-color: $b1;
-      &:hover {
-        background-color: $b2;
-        color: $f2;
-      }
-    }
   }
 }

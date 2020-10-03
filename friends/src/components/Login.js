@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import * as yup from "yup";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
+import axiosWithAuth from "../api/axiosWithAuth";
 import "../style/Login.scss";
 const schema = yup.object().shape({
   username: yup.string().required("please enter username"),
@@ -15,8 +15,8 @@ const Login = (props) => {
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => {
-    axios
-      .post("http://localhost:5000/api/login", data)
+    axiosWithAuth()
+      .post("/login", data)
       .then((r) => {
         localStorage.setItem("token", r.data.payload);
         props.setLoggedIn(true);

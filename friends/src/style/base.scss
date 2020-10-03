@@ -20,3 +20,28 @@ $e1: #a6c;
   align-content: center;
   align-items: center;
 }
+@mixin form() {
+  background: linear-gradient(to top, $b1, $b2);
+  padding: 0.5rem;
+  @include flexC();
+  gap: 0.75rem;
+  label {
+    @include flexC();
+    align-items: flex-start;
+    .error {
+      color: $error;
+    }
+  }
+}
+@mixin button() {
+  padding: 0.5rem;
+  border: 1px solid $b2;
+  background: linear-gradient(to top, $b1, $b2);
+  color: $f1;
+  &:hover {
+    border: 1px solid $f1;
+    background: linear-gradient(to top, $b2, $b1);
+    color: $f2;
+    cursor: pointer;
+  }
+}
