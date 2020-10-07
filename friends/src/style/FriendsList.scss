@@ -1,0 +1,17 @@
+@import "./base.scss";
+.friendsListContainer {
+  padding: 0.5rem;
+  @include flexC();
+  gap: 0.5rem;
+  > h2 {
+    font-size: 1.2rem;
+  }
+  .friendsList {
+    @include flexR();
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    .friendCard {
+      padding: 0.5rem;
+    }
+  }
+}
